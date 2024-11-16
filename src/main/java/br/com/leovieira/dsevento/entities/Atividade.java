@@ -23,6 +23,7 @@ public class Atividade {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descricao;
+	private Double preco;
 	
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
@@ -36,9 +37,10 @@ public class Atividade {
 	
 	public Atividade() {}
 
-	public Atividade(Long id, String descricao, Categoria categoria) {
+	public Atividade(Long id, String descricao, Double preco, Categoria categoria) {
 		this.id = id;
 		this.descricao = descricao;
+		this.preco = preco;
 		this.categoria = categoria;
 	}
 
@@ -64,6 +66,14 @@ public class Atividade {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
 
 	public List<Bloco> getBlocos() {
