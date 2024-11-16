@@ -22,6 +22,7 @@ public class Atividade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String nome;
 	private String descricao;
 	private Double preco;
 	
@@ -37,8 +38,9 @@ public class Atividade {
 	
 	public Atividade() {}
 
-	public Atividade(Long id, String descricao, Double preco, Categoria categoria) {
+	public Atividade(Long id, String nome, String descricao, Double preco, Categoria categoria) {
 		this.id = id;
+		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;
 		this.categoria = categoria;
@@ -50,6 +52,14 @@ public class Atividade {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getDescricao() {
